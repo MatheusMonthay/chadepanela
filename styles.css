@@ -1,0 +1,99 @@
+#intro {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #e6f2ea; /* Cor verde suave inspirada no convite */
+    color: #3b675b; /* Cor verde escura */
+    background-image: url('./image.jpg'); /* Ajuste para o background */
+    background-size: cover; /* Cobrir todo o fundo */
+    background-position: center; /* Centralizar a imagem */
+}
+
+#intro .content {
+    background-color: #fff; /* Fundo branco para a div */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.noivos {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+h1.great-vibes-regular, h2.great-vibes-regular {
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 48px;
+}
+
+p {
+    font-size: 24px;
+    margin: 5px 0;
+    color: #4d8b73;
+}
+
+.local {
+    font-size: 24px;
+    margin-top: 10px;
+    color: #4d8b73;
+}
+
+a.button {
+    display: inline-block;
+    padding: 15px 30px;
+    margin-top: 20px;
+    background-color: #4d8b73;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+a.button:hover {
+    background-color: #3b675b;
+}
+
+#informacoes {
+    display: flex;
+    justify-content: space-around;
+    background-color: #e0ede5;
+    padding: 20px 0;
+    flex-wrap: wrap; /* Adicionado para responsividade */
+}
+
+.info-box {
+    flex: 1;
+    max-width: 30%;
+    margin: 10px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .info-box {
+        max-width: 90%;
+    }
+}

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chá de Panela - Matheus e Kariny</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Links para a fonte Great Vibes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <!-- Botão para iniciar a música manualmente, caso não toque automaticamente -->
+    <button onclick="playMusic()">Tocar Música</button>
+
+    <!-- Reprodução automática de música -->
+    <audio id="background-music" loop>
+        <source src="musica.mp3" type="audio/mpeg" />
+        Seu navegador não suporta a reprodução de áudio.
+    </audio>
+
+    <script>
+      function playMusic() {
+        var audio = document.getElementById("background-music");
+        audio.play();
+      }
+    </script>
+
+    <!-- Primeira Seção: Foto e Informações Principais -->
+    <section id="intro">
+        <div class="content">
+            <h1>Chá de Casa Nova</h1>
+            <h2 class="great-vibes-regular">Matheus & Kariny</h2>
+            <p>14 de Dezembro de 2024</p>
+            <p class="local">Chácara do Batata</p>
+        </div>
+    </section>
+
+    <!-- Seções em Coluna -->
+    <section id="informacoes">
+        <div class="info-box">
+            <h2>Local do Evento</h2>
+            <p>Chácara do Batata</p>
+            <a
+              href="https://maps.app.goo.gl/PufAiSmB1FMj9aHH8"
+              target="_blank"
+              class="button"
+              >Ver Local no Google Maps</a
+            >
+        </div>
+        <div class="info-box">
+            <h2>Confirmação de Presença</h2>
+            <p>Por favor, confirme sua presença clicando no botão abaixo.</p>
+            <a id="confirmButton" href="#" target="_blank" class="button"
+              >Confirmar Presença via WhatsApp</a
+            >
+        </div>
+        <div class="info-box">
+            <h2>Lista de Presentes</h2>
+            <p>Confira nossa lista de presentes:</p>
+            <a
+              href="https://www.sualoja.com/lista-de-presentes"
+              target="_blank"
+              class="button"
+              >Ver Lista de Presentes</a
+            >
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+button {
+    background-color: #4d8b73;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #3b675b;
+}
+
+section {
+    padding: 50px;
+    text-align: center;
+}
+
+#intro {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #e6f2ea; /* Cor verde suave inspirada no convite */
+    text-align: center;
+    color: #3b675b; /* Cor verde escura */
+    background-image: url('./image.jpg'); /* Ajuste para o background */
+    background-size: cover; /* Cobrir todo o fundo */
+    background-position: center; /* Centralizar a imagem */
+}
+
+.noivos {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+h1.great-vibes-regular, h2.great-vibes-regular {
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 48px;
+}
+
+p {
+    font-size: 24px;
+    margin: 5px 0;
+    color: #4d8b73;
+}
+
+.local {
+    font-size: 24px;
+    margin-top: 10px;
+    color: #4d8b73;
+}
+
+a.button {
+    display: inline-block;
+    padding: 15px 30px;
+    margin-top: 20px;
+    background-color: #4d8b73;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+a.button:hover {
+    background-color: #3b675b;
+}
+
+#informacoes {
+    display: block; /* Alterado de flex para block */
+    background-color: #e0ede5;
+    padding: 20px 0;
+}
+
+.info-box {
+    max-width: 80%; /* Ajuste de largura para centralizar */
+    margin: 20px auto; /* Centraliza os blocos na página */
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .info-box {
+        max-width: 100%;
+    }
+}
+</style>
