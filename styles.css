@@ -1,99 +1,175 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+}
+
+button,
+.modal-button,
+a.button {
+  /* Adiciona a classe a.button para garantir a mesma estilização */
+  background-color: #4d8b73;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 10px 0; /* Margem uniforme em cima e embaixo */
+  transition: background-color 0.3s ease; /* Transição suave para hover */
+}
+
+button:hover,
+.modal-button:hover,
+a.button:hover {
+  /* Adiciona o efeito hover para todos os botões */
+  background-color: #3b675b; /* Cor de fundo quando o mouse está sobre o botão */
+}
+
+section {
+  padding: 50px;
+  text-align: center;
+}
+
 #intro {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #e6f2ea; /* Cor verde suave inspirada no convite */
-    color: #3b675b; /* Cor verde escura */
-    background-image: url('./image.jpg'); /* Ajuste para o background */
-    background-size: cover; /* Cobrir todo o fundo */
-    background-position: center; /* Centralizar a imagem */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #e6f2ea; /* Cor verde suave inspirada no convite */
+  text-align: center;
+  color: #3b675b; /* Cor verde escura */
+  background-image: url("./image.jpg"); /* Ajuste para o background */
+  background-size: cover; /* Cobrir todo o fundo */
+  background-position: center; /* Centralizar a imagem */
 }
 
 #intro .content {
-    background-color: #fff; /* Fundo branco para a div */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Fundo branco com transparência */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-.noivos {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
+h1,
+h2 {
+  margin: 0;
 }
 
-h1, h2 {
-    margin: 0;
-}
-
-h1.great-vibes-regular, h2.great-vibes-regular {
-    font-family: "Great Vibes", cursive;
-    font-weight: 400;
-    font-style: normal;
+h1.great-vibes-regular,
+h2.great-vibes-regular {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 h1 {
-    font-size: 36px;
+  font-size: 36px;
 }
 
 h2 {
-    font-size: 48px;
+  font-size: 48px;
 }
 
 p {
-    font-size: 24px;
-    margin: 5px 0;
-    color: #4d8b73;
+  font-size: 24px;
+  margin: 5px 0;
+  color: #4d8b73;
 }
 
 .local {
-    font-size: 24px;
-    margin-top: 10px;
-    color: #4d8b73;
-}
-
-a.button {
-    display: inline-block;
-    padding: 15px 30px;
-    margin-top: 20px;
-    background-color: #4d8b73;
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-}
-
-a.button:hover {
-    background-color: #3b675b;
+  font-size: 24px;
+  margin-top: 10px;
+  color: #4d8b73;
 }
 
 #informacoes {
-    display: flex;
-    justify-content: space-around;
-    background-color: #e0ede5;
-    padding: 20px 0;
-    flex-wrap: wrap; /* Adicionado para responsividade */
+  display: flex;
+  justify-content: space-around;
+  background-color: #e0ede5;
+  padding: 20px 0;
+  flex-wrap: wrap; /* Responsividade */
 }
 
 .info-box {
-    flex: 1;
-    max-width: 30%;
-    margin: 10px;
-    background-color: #f4f4f4;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+  flex: 1;
+  max-width: 30%;
+  margin: 10px;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex; /* Permite alinhar os itens internos */
+  flex-direction: column; /* Coloca os elementos em coluna */
+  justify-content: space-between; /* Espaça os elementos uniformemente */
+  height: 250px; /* Define uma altura fixa */
+}
+
+.info-box p {
+  margin: 10px 0; /* Margem uniforme para parágrafos */
+  flex-grow: 1; /* Faz com que os parágrafos ocupem o espaço disponível */
 }
 
 @media (max-width: 768px) {
-    .info-box {
-        max-width: 90%;
-    }
+  .info-box {
+    max-width: 90%;
+  }
+}
+
+/* Estilos para o modal */
+.modal {
+  display: none; /* Inicialmente oculto */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Fundo escuro com opacidade */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 300px; /* Largura máxima do modal */
+  text-align: center;
+  border-radius: 8px;
+}
+
+.modal-content button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #4d8b73; /* Cor do botão do modal */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #3b675b; /* Efeito hover do botão do modal */
+}
+
+a {
+  text-decoration: none; /* Remove o sublinhado */
+}
+
+a:hover {
+  text-decoration: underline; /* Opcional: Adiciona sublinhado ao passar o mouse */
 }
