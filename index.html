@@ -1,94 +1,116 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chá de Panela - Matheus & Kariny</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <!-- Botão para iniciar a música manualmente, caso não toque automaticamente -->
     <button onclick="playMusic()">Tocar Música</button>
 
     <!-- Reprodução automática de música -->
     <audio id="background-music" loop>
-        <source src="musica.mp3" type="audio/mpeg" />
-        Seu navegador não suporta a reprodução de áudio.
+      <source src="musica.mp3" type="audio/mpeg" />
+      Seu navegador não suporta a reprodução de áudio.
     </audio>
 
     <script>
-        function playMusic() {
-            var audio = document.getElementById("background-music");
-            var playPromise = audio.play();
-            if (playPromise !== undefined) {
-                playPromise.then(function() {
-                    console.log("Reprodução iniciada");
-                }).catch(function(error) {
-                    console.log("Erro na reprodução:", error);
-                });
-            }
+      function playMusic() {
+        var audio = document.getElementById("background-music");
+        var playPromise = audio.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then(function () {
+              console.log("Reprodução iniciada");
+            })
+            .catch(function (error) {
+              console.log("Erro na reprodução:", error);
+            });
         }
+      }
 
-        // Chama a função playMusic após o HTML ser carregado
-        document.addEventListener('DOMContentLoaded', function() {
-            playMusic();
-            document.getElementById("intro").style.display = "flex"; // Garante que a seção de introdução seja exibida
-        });
+      // Chama a função playMusic após o HTML ser carregado
+      document.addEventListener("DOMContentLoaded", function () {
+        playMusic();
+        document.getElementById("intro").style.display = "flex"; // Garante que a seção de introdução seja exibida
+      });
 
-        // Função para abrir o modal
-        document.getElementById('modalButton').onclick = function() {
-            document.getElementById('confirmModal').style.display = 'block';
-        };
+      // Função para abrir o modal
+      document.getElementById("modalButton").onclick = function () {
+        document.getElementById("confirmModal").style.display = "block";
+      };
 
-        // Para fechar o modal ao clicar fora dele
-        window.onclick = function(event) {
-            if (event.target == document.getElementById('confirmModal')) {
-                document.getElementById('confirmModal').style.display = 'none';
-            }
+      // Para fechar o modal ao clicar fora dele
+      window.onclick = function (event) {
+        if (event.target == document.getElementById("confirmModal")) {
+          document.getElementById("confirmModal").style.display = "none";
         }
+      };
     </script>
 
     <!-- Seção de Informações Principais -->
     <section id="intro">
-        <div class="content">
-            <h1>Chá de Panela</h1>
-            <h2 class="great-vibes-regular">Matheus & Kariny</h2>
-            <p>14 de Dezembro de 2024</p>
-            <p class="local">Chácara do Batata</p>
-        </div>
+      <div class="content">
+        <h1>Chá de Panela</h1>
+        <h2 class="great-vibes-regular">Matheus & Kariny</h2>
+        <p>14 de Dezembro de 2024</p>
+        <p class="local">Chácara do Batata</p>
+        <p>As 18 hrs</p>
+      </div>
     </section>
 
     <!-- Seções em Coluna -->
     <section id="informacoes">
-        <div class="info-box">
-            <h2>Local do Evento</h2>
-            <p>Chácara do Batata</p>
-            <a href="https://maps.app.goo.gl/PufAiSmB1FMj9aHH8" target="_blank" class="button">Ver Local no Google Maps</a>
-        </div>
-        <div class="info-box">
-            <h2>Confirmação de Presença</h2>
-            <p>Por favor, confirme sua presença clicando no botão abaixo.</p>
-            <button id="modalButton" class="button">Confirmar Presença via WhatsApp</button>
+      <div class="info-box">
+        <h2>Local do Evento</h2>
+        <p>Chácara do Batata</p>
+        <a
+          href="https://maps.app.goo.gl/PufAiSmB1FMj9aHH8"
+          target="_blank"
+          class="button"
+          >Ver Local no Google Maps</a
+        >
+      </div>
+      <div class="info-box">
+        <h2>Confirmação de Presença</h2>
+        <p>Por favor, confirme sua presença clicando no botão abaixo.</p>
+        <button id="modalButton" class="button">
+          Confirmar Presença via WhatsApp
+        </button>
 
-            <!-- Modal -->
-            <div id="confirmModal" class="modal">
-                <div class="modal-content">
-                    <h3>Com quem deseja confirmar?</h3>
-                    <button id="confirmMatheus" class="modal-button">Confirmar com Matheus</button>
-                    <button id="confirmKariny" class="modal-button">Confirmar com Kariny</button>
-                </div>
-            </div>
+        <!-- Modal -->
+        <div id="confirmModal" class="modal">
+          <div class="modal-content">
+            <h3>Com quem deseja confirmar?</h3>
+            <button id="confirmMatheus" class="modal-button">
+              Confirmar com Matheus
+            </button>
+            <button id="confirmKariny" class="modal-button">
+              Confirmar com Kariny
+            </button>
+          </div>
         </div>
-        <div class="info-box">
-            <h2>Lista de Presentes</h2>
-            <p>Confira nossa lista de presentes:</p>
-            <a href="https://lista.havan.com.br/Convidado/ItensListaPresente/781159" target="_blank" class="button">Ver Lista de Presentes</a>
-        </div>
+      </div>
+      <div class="info-box">
+        <h2>Lista de Presentes</h2>
+        <p>Confira nossa lista de presentes:</p>
+        <a
+          href="https://lista.havan.com.br/Convidado/ItensListaPresente/781159"
+          target="_blank"
+          class="button"
+          >Ver Lista de Presentes</a
+        >
+      </div>
     </section>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
